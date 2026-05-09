@@ -673,6 +673,9 @@ async def StarTinG():
         except Exception as e:
             print(f"ErroR TcP - {e} => ResTarTinG ...")
 
+def start_async():
+    asyncio.run(StarTinG())
 
 if __name__ == '__main__':
-    asyncio.run(StarTinG())
+    threading.Thread(target=start_async, daemon=True).start()
+    run_flask()
